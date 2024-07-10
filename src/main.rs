@@ -55,7 +55,7 @@ fn setup(mut commands: Commands) {
 
 fn update(time: Res<Time>, mut query: Query<&mut Style, With<Text>>) {
     for mut style in query.iter_mut() {
-        style.margin.left = Val::Percent(time.elapsed_seconds().cos() * 100.);
+        style.margin.left = Val::Px(time.elapsed_seconds().cos() * 100.);
     }
 }
 
